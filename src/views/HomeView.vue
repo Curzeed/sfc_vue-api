@@ -3,7 +3,7 @@
 <template>
   <div class="home">
     <div class="container">
-      <CardComponent />
+      <CardComponent @likeMars="likeMars"/>
     </div>
   </div>
 </template>
@@ -17,5 +17,10 @@ export default {
   components: {
     CardComponent,
   },
+  methods : {
+    likeMars : function (){
+      return alert("You like mars ? Me too");
+    }
+  }
 };
 </script>

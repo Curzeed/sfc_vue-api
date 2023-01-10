@@ -4,6 +4,10 @@
     <span class="camera_name">Camera : {{ photo.camera.full_name }}</span>
     <img :src="photo.img_src" alt="image" class="img_mars" />
     <span>{{ formatDate(photo.earth_date) }}</span>
+    <br>
+    <span> Activity : {{ photo.rover }}</span>
+    <br>
+    <span> Landing Date : {{ formatDate(photo.rover.landing_date) }}</span>
   </div>
 </template>
 

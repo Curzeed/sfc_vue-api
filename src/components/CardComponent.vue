@@ -1,13 +1,14 @@
 <template>
-  <div class="container" v-for="photo in api" :key="photo.id">
+  <div class="photo" v-for="photo in api" :key="photo.id">
     <h2>Robot : {{ photo.rover.name }}</h2>
     <span class="camera_name">Camera : {{ photo.camera.full_name }}</span>
     <img :src="photo.img_src" alt="image" class="img_mars" />
     <span>{{ formatDate(photo.earth_date) }}</span>
     <br>
-    <span> Activity : {{ photo.rover }}</span>
+    <span> Status : {{ photo.rover.activity }}</span>
     <br>
     <span> Landing Date : {{ formatDate(photo.rover.landing_date) }}</span>
+    <button @click="$emit('likeMars')">?</button>
   </div>
 </template>
 
@@ -52,12 +53,12 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
 }
 .photo {
   display: flex;
   margin-left: 5px;
   flex-direction: column;
+  align-items: center;
 }
 </style>
